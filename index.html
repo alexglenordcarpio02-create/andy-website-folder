@@ -6,10 +6,13 @@
   <title>Parenting Points by Andy Whitney</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- CURSOR GLOW -->
+  <div class="cursor-glow" id="cursor-glow"></div>
 
   <!-- NAV -->
   <header class="navbar" id="navbar">
@@ -25,10 +28,12 @@
       </a>
       <nav class="nav-links" id="nav-links">
         <a href="#hero">Home</a>
-        <a href="#about">About Us</a>
+        <a href="#about">About</a>
+        <a href="#book">The Book</a>
         <a href="#blog">Blog</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <a href="#" class="btn btn-nav-cta">Order Now</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -37,66 +42,188 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
+    <canvas id="particle-canvas"></canvas>
     <div class="hero-content reveal">
-      <h1>Parenting Points:<br/><span>Raising a Happy<br/>and Capable Child</span></h1>
-      <p>Your practical guide to navigating parenting with confidence,<br class="br-desktop"/> compassion, and real-life strategies.</p>
-      <a href="#book" class="btn btn-white">Learn More About the Book</a>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        New Release — Available Now
+      </div>
+      <h1>
+        <span class="h1-line">Parenting Points:</span>
+        <span class="h1-accent">Raising a Happy<br/>and Capable Child</span>
+      </h1>
+      <p>Your practical guide to navigating parenting with confidence,<br class="br-desktop"/> compassion, and real-life strategies that actually work.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn btn-white">Learn More</a>
+        <a href="#" class="btn btn-ghost">View on Amazon ↗</a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="proof-avatars">
+          <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&q=80" alt="" />
+        </div>
+        <p><strong>500+</strong> families already reading</p>
+      </div>
     </div>
-    <div class="hero-img-wrap">
-      <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=700&q=80" alt="Parent reading with children" class="hero-img" />
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-back"></div>
+        <div class="hcard hcard-mid"></div>
+        <div class="hcard hcard-front">
+          <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=700&q=80" alt="Parent reading with children" />
+          <div class="hcard-badge">
+            <div class="hcard-badge-icon">⭐</div>
+            <div>
+              <strong>4.9 / 5</strong>
+              <small>Parent Rating</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-float-tag tag-1">📘 40+ Years Experience</div>
+      <div class="hero-float-tag tag-2">🏆 Expert-Backed</div>
     </div>
     <div class="hero-scroll-hint">
-      <span></span>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num" data-target="40">0</span><span class="stat-suffix">+</span>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="500">0</span><span class="stat-suffix">+</span>
+        <p>Families Helped</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="12">0</span><span class="stat-suffix"></span>
+        <p>Countries Taught</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+        <p>Would Recommend</p>
+      </div>
     </div>
   </section>
 
   <!-- GUIDE BANNER -->
   <section class="guide-banner">
-    <div class="guide-inner reveal">
-      <h2>Your Guide to Confident Parenting</h2>
-      <p>Whether you're navigating toddler tantrums or preschool peer struggles, this book is your guide to positive, constructive parenting.</p>
-      <a href="#" class="btn btn-outline-white">View on Amazon</a>
+    <div class="guide-inner container reveal">
+      <div class="guide-text">
+        <h2>Your Guide to Confident Parenting</h2>
+        <p>Whether you're navigating toddler tantrums or preschool peer struggles, this book is your guide to positive, constructive parenting.</p>
+        <a href="#" class="btn btn-outline-white">View on Amazon ↗</a>
+      </div>
+      <div class="guide-features">
+        <div class="guide-feature">
+          <span>🧠</span>
+          <p>Science-backed strategies</p>
+        </div>
+        <div class="guide-feature">
+          <span>💬</span>
+          <p>Real parent stories</p>
+        </div>
+        <div class="guide-feature">
+          <span>🎯</span>
+          <p>Actionable techniques</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- WHY THIS BOOK MATTERS -->
   <section class="why" id="book">
     <div class="container">
-      <h2 class="section-title reveal">Why This Book Matters</h2>
+      <div class="section-header reveal">
+        <div class="section-pill">Why It Matters</div>
+        <h2 class="section-title">Built on Decades of<br/>Real Experience</h2>
+      </div>
       <div class="why-cards">
         <div class="why-card reveal" style="--delay:0s">
-          <div class="why-icon green">📘</div>
+          <div class="why-icon-wrap">
+            <div class="why-icon">📘</div>
+          </div>
           <h3>Practical Advice</h3>
-          <p>Straightforward guidance for everyday parenting challenges.</p>
+          <p>Straightforward guidance for everyday parenting challenges—written in plain language for real families.</p>
+          <div class="card-arrow">→</div>
         </div>
-        <div class="why-card reveal" style="--delay:.15s">
-          <div class="why-icon teal">🎓</div>
+        <div class="why-card reveal" style="--delay:.12s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">🎓</div>
+          </div>
           <h3>Expert Insights</h3>
-          <p>Backed by 40+ years of experience in child development.</p>
+          <p>Backed by 40+ years of hands-on experience in early childhood development and education.</p>
+          <div class="card-arrow">→</div>
         </div>
-        <div class="why-card reveal" style="--delay:.3s">
-          <div class="why-icon blue">💬</div>
+        <div class="why-card reveal" style="--delay:.24s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">💬</div>
+          </div>
           <h3>Real-Life Stories</h3>
-          <p>Examples parents can relate to and apply immediately.</p>
+          <p>Relatable examples from classrooms and families you can recognize and apply immediately.</p>
+          <div class="card-arrow">→</div>
+        </div>
+        <div class="why-card reveal" style="--delay:.36s">
+          <div class="why-icon-wrap">
+            <div class="why-icon">❤️</div>
+          </div>
+          <h3>Compassionate Approach</h3>
+          <p>A warm, non-judgmental framework that respects both the child and the parent's journey.</p>
+          <div class="card-arrow">→</div>
         </div>
       </div>
 
       <!-- BOOK DETAIL -->
       <div class="book-detail">
-        <div class="book-imgs reveal">
-          <div class="book-stack">
-            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&q=80" alt="Book" class="book-img book-back" />
-            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&q=80" alt="Book" class="book-img book-mid" />
-            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&q=80" alt="Book" class="book-img book-front" />
+        <div class="book-visual reveal">
+          <div class="book-3d-wrap" id="book3d">
+            <div class="book-3d">
+              <div class="book-3d-front">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&q=80" alt="Book" />
+                <div class="book-3d-overlay">
+                  <p class="b3d-title">PARENTING POINTS</p>
+                  <p class="b3d-sub">Raising a Happy and Capable Child</p>
+                  <p class="b3d-author">Andy Whitney</p>
+                </div>
+              </div>
+              <div class="book-3d-spine"></div>
+            </div>
+          </div>
+          <div class="book-visual-badge">
+            <span>📚</span>
+            <div>
+              <strong>Now Available</strong>
+              <small>On Amazon & Bookstores</small>
+            </div>
           </div>
         </div>
         <div class="book-text reveal">
+          <div class="section-pill">The Book</div>
           <h2>PARENTING POINTS</h2>
           <h3>Raising a Happy and Capable Child</h3>
-          <p>Parenting Points helps guide parents through the ups and downs of their child's early development. It offers straightforward advice, understandable explanations and real-life examples of many of the dilemmas commonly faced by parents. It focuses on how to raise their child using a positive, constructive and sensitive approach.</p>
-          <p>From defining developmental expectations to providing advice on behavior management to outlining the importance of positive change that supports their child, Parenting Points navigates parents through the maze of issues that they often face when trying to do the right thing for their children.</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <p>Parenting Points helps guide parents through the ups and downs of their child's early development. It offers straightforward advice, understandable explanations and real-life examples of many of the dilemmas commonly faced by parents.</p>
+          <p>It focuses on how to raise their child using a positive, constructive and sensitive approach—navigating parents through the maze of issues they face when trying to do the right thing for their children.</p>
+          <div class="book-highlights">
+            <div class="bh-item"><span>✓</span> Ages 0–6 focus</div>
+            <div class="bh-item"><span>✓</span> Behavior management</div>
+            <div class="bh-item"><span>✓</span> Emotional development</div>
+            <div class="bh-item"><span>✓</span> School readiness</div>
+          </div>
+          <div class="book-ctas">
+            <a href="#" class="btn btn-primary">Order Now</a>
+            <a href="#" class="btn btn-outline">Preview Chapter</a>
+          </div>
         </div>
       </div>
     </div>
@@ -105,48 +232,154 @@
   <!-- ABOUT ANDY -->
   <section class="about" id="about">
     <div class="container about-inner">
-      <div class="about-text reveal">
-        <h2>About Andy Whitney</h2>
-        <p>Andy has been an early childhood educator for more than 40 years, and at heart, he still sees himself as a teacher who loves working with young children and the people who guide them. Originally from the United States, Andy's career has taken him around the world—living and working in Washington, D.C., Bethesda, Maryland, Indonesia, and Singapore.</p>
-        <p>Over the years, he has taught in early childhood classrooms, worked as a head teacher, spoken to aspiring teachers, and provided seminars and workshops to parents of young children.</p>
-        <p>Andy earned his degree in Child Development from the University of Maine and later completed a Master's in Education at Northeastern University. But he'll tell you that some of his greatest lessons have come from the children, parents, and teachers he has had the privilege of knowing throughout his career—people who have taught him something at every stage of life.</p>
-      </div>
       <div class="about-img-wrap reveal">
+        <div class="about-img-glow"></div>
         <div class="about-img-frame">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Andy Whitney" />
         </div>
-        <div class="about-blob"></div>
+        <div class="about-years-badge">
+          <strong>40+</strong>
+          <span>Years in Early<br/>Childhood Ed.</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-pill">Meet the Author</div>
+        <h2>About Andy Whitney</h2>
+        <p>Andy has been an early childhood educator for more than 40 years, and at heart, he still sees himself as a teacher who loves working with young children and the people who guide them.</p>
+        <p>Originally from the United States, Andy's career has taken him around the world—living and working in Washington, D.C., Bethesda, Maryland, Indonesia, and Singapore.</p>
+        <p>Andy earned his degree in Child Development from the University of Maine and later completed a Master's in Education at Northeastern University.</p>
+        <div class="about-credentials">
+          <div class="cred">
+            <div class="cred-icon">🎓</div>
+            <div>
+              <strong>M.Ed.</strong>
+              <small>Northeastern University</small>
+            </div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">🌍</div>
+            <div>
+              <strong>Global</strong>
+              <small>USA, Indonesia, Singapore</small>
+            </div>
+          </div>
+          <div class="cred">
+            <div class="cred-icon">📚</div>
+            <div>
+              <strong>Author</strong>
+              <small>Parenting Points</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIAL SLIDER -->
+  <!-- TESTIMONIALS -->
   <section class="testimonials">
+    <div class="testimonials-bg-art">
+      <div class="tba-circle c1"></div>
+      <div class="tba-circle c2"></div>
+    </div>
     <div class="container">
-      <h2 class="section-title reveal">What parents say about Andy Whitney</h2>
-      <p class="section-sub reveal">Andy Whitney's book offers parents the opportunity to benefit from the same practical, effective approaches he uses as a teacher, school administrator, and parent.</p>
+      <div class="section-header reveal">
+        <div class="section-pill light">Reviews</div>
+        <h2 class="section-title light">What parents say<br/>about Andy Whitney</h2>
+        <p class="section-sub light">Andy Whitney's book offers parents the opportunity to benefit from the same practical, effective approaches he uses as a teacher, school administrator, and parent.</p>
+      </div>
       <div class="testimonial-slider" id="testimonial-slider">
         <div class="testimonial-track" id="testimonial-track">
           <div class="testimonial-slide">
+            <div class="t-stars">★★★★★</div>
             <p class="t-quote">"His insights are grounded in experience and focused on the real, everyday challenges parents face. What makes this book especially valuable is its balance of sound advice and relatable guidance."</p>
-            <p class="t-author">— Roby Marcus, MD, Singapore/Bethesda, Maryland</p>
+            <div class="t-author-wrap">
+              <img src="https://images.unsplash.com/photo-1612833603922-5b2bf75ea2d4?w=60&q=80" alt="" class="t-avatar" />
+              <div>
+                <strong>Roby Marcus, MD</strong>
+                <small>Singapore / Bethesda, Maryland</small>
+              </div>
+            </div>
           </div>
           <div class="testimonial-slide">
-            <p class="t-quote">"Parents need tools that are both meaningful and easy to apply. Andy delivers exactly that—a toolbox of strategies that will build your confidence and skills."</p>
-            <p class="t-author">— Jennifer L., Parent & Teacher, New York</p>
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">"Parents need tools that are both meaningful and easy to apply. Andy delivers exactly that—a toolbox of strategies that will build your confidence and skills as a parent."</p>
+            <div class="t-author-wrap">
+              <img src="https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?w=60&q=80" alt="" class="t-avatar" />
+              <div>
+                <strong>Jennifer L.</strong>
+                <small>Parent & Teacher, New York</small>
+              </div>
+            </div>
           </div>
           <div class="testimonial-slide">
-            <p class="t-quote">"Children, in turn, benefit from parents who are consistent, informed, and empathetic. It's the next best thing to having Andy as your child's preschool teacher."</p>
-            <p class="t-author">— Sarah K., Parent, Washington D.C.</p>
+            <div class="t-stars">★★★★★</div>
+            <p class="t-quote">"Children benefit from parents who are consistent, informed, and empathetic. It's the next best thing to having Andy as your child's preschool teacher."</p>
+            <div class="t-author-wrap">
+              <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=60&q=80" alt="" class="t-avatar" />
+              <div>
+                <strong>Sarah K.</strong>
+                <small>Parent, Washington D.C.</small>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="t-dots" id="t-dots">
-          <span class="t-dot active" data-i="0"></span>
-          <span class="t-dot" data-i="1"></span>
-          <span class="t-dot" data-i="2"></span>
+        <div class="t-controls">
+          <button class="t-arrow t-prev" id="t-prev" aria-label="Previous">&#8592;</button>
+          <div class="t-dots" id="t-dots">
+            <span class="t-dot active" data-i="0"></span>
+            <span class="t-dot" data-i="1"></span>
+            <span class="t-dot" data-i="2"></span>
+          </div>
+          <button class="t-arrow t-next" id="t-next" aria-label="Next">&#8594;</button>
         </div>
-        <button class="t-arrow t-prev" id="t-prev">&#8592;</button>
-        <button class="t-arrow t-next" id="t-next">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG / TIPS -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-pill">Parenting Tips</div>
+        <h2 class="section-title">Recent Articles &amp; Insights</h2>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card blog-card--featured reveal">
+          <div class="blog-img-wrap">
+            <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=700&q=80" alt="Children playing" />
+            <div class="blog-category">Development</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">June 2024 · 5 min read</div>
+            <h3>How Play Shapes Your Child's Emotional Intelligence</h3>
+            <p>Unstructured play isn't just fun — it's the primary way young children develop the emotional tools they'll carry for life.</p>
+            <a href="#" class="blog-link">Read Article →</a>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="--delay:.1s">
+          <div class="blog-img-wrap">
+            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80" alt="Family" />
+            <div class="blog-category">Behavior</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">May 2024 · 4 min read</div>
+            <h3>Turning Tantrums Into Teaching Moments</h3>
+            <p>When big emotions arrive, parents who stay calm build stronger connections.</p>
+            <a href="#" class="blog-link">Read Article →</a>
+          </div>
+        </div>
+        <div class="blog-card reveal" style="--delay:.2s">
+          <div class="blog-img-wrap">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80" alt="Learning" />
+            <div class="blog-category">Learning</div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">April 2024 · 6 min read</div>
+            <h3>School Readiness: What Really Matters at Age 4</h3>
+            <p>Forget flashcards. The skills that predict school success might surprise you.</p>
+            <a href="#" class="blog-link">Read Article →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -154,21 +387,42 @@
   <!-- PHOTO GRID -->
   <section class="photo-grid">
     <div class="grid-wrap">
-      <div class="grid-item reveal" style="--delay:0s"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=400&q=80" alt="Children playing" /></div>
-      <div class="grid-item tall reveal" style="--delay:.1s"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80" alt="Happy family" /></div>
-      <div class="grid-item reveal" style="--delay:.2s"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80" alt="Child learning" /></div>
-      <div class="grid-item wide reveal" style="--delay:.3s"><img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=600&q=80" alt="Kids together" /></div>
-      <div class="grid-item reveal" style="--delay:.4s"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80" alt="Parent child bond" /></div>
-      <div class="grid-item reveal" style="--delay:.5s"><img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=80" alt="Child painting" /></div>
-      <div class="grid-item tall reveal" style="--delay:.6s"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Reading together" /></div>
-      <div class="grid-item reveal" style="--delay:.7s"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Joyful child" /></div>
+      <div class="grid-item reveal" style="--delay:0s"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=400&q=80" alt="Children playing" /><div class="grid-overlay"><span>Joy</span></div></div>
+      <div class="grid-item tall reveal" style="--delay:.1s"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&q=80" alt="Happy family" /><div class="grid-overlay"><span>Family</span></div></div>
+      <div class="grid-item reveal" style="--delay:.2s"><img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80" alt="Child learning" /><div class="grid-overlay"><span>Learn</span></div></div>
+      <div class="grid-item wide reveal" style="--delay:.3s"><img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=600&q=80" alt="Kids together" /><div class="grid-overlay"><span>Together</span></div></div>
+      <div class="grid-item reveal" style="--delay:.4s"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&q=80" alt="Parent child bond" /><div class="grid-overlay"><span>Bond</span></div></div>
+      <div class="grid-item reveal" style="--delay:.5s"><img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&q=80" alt="Child painting" /><div class="grid-overlay"><span>Create</span></div></div>
+      <div class="grid-item tall reveal" style="--delay:.6s"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&q=80" alt="Reading together" /><div class="grid-overlay"><span>Read</span></div></div>
+      <div class="grid-item reveal" style="--delay:.7s"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Joyful child" /><div class="grid-overlay"><span>Grow</span></div></div>
     </div>
   </section>
 
-  <!-- INSTAGRAM SECTION -->
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-card reveal">
+        <div class="nl-text">
+          <div class="section-pill">Stay Connected</div>
+          <h2>Get Free Parenting Tips<br/>Every Week</h2>
+          <p>Join 2,000+ parents receiving practical, bite-sized advice straight to their inbox.</p>
+        </div>
+        <form class="nl-form" id="nl-form">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn btn-primary">Subscribe Free</button>
+        </form>
+        <p class="nl-fine">No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
   <section class="instagram">
     <div class="container">
-      <h2 class="section-title reveal">Follow us on Instagram <span class="ig-handle">@parenting.points</span></h2>
+      <div class="section-header reveal">
+        <div class="section-pill">Social</div>
+        <h2 class="section-title">Follow <span class="ig-handle">@parenting.points</span></h2>
+      </div>
       <div class="ig-grid">
         <div class="ig-item reveal" style="--delay:0s"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=300&q=80" alt="" /><div class="ig-overlay"><span>❤️ 245</span></div></div>
         <div class="ig-item reveal" style="--delay:.08s"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&q=80" alt="" /><div class="ig-overlay"><span>❤️ 312</span></div></div>
@@ -185,7 +439,7 @@
         <div class="ig-stats">
           <div><strong>7</strong><small>Posts</small></div>
           <div><strong>105</strong><small>Following</small></div>
-          <div><strong>1565</strong><small>Followers</small></div>
+          <div><strong>1,565</strong><small>Followers</small></div>
         </div>
         <a href="#" class="btn btn-primary">Follow on Instagram</a>
       </div>
@@ -194,30 +448,53 @@
 
   <!-- TIKTOK TEASER -->
   <section class="tiktok-section">
+    <div class="tiktok-bg-art">
+      <div class="tt-ring r1"></div>
+      <div class="tt-ring r2"></div>
+    </div>
     <div class="container tiktok-inner reveal">
-      <div class="tiktok-logo">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="40"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.99a8.19 8.19 0 004.79 1.54V7.1a4.86 4.86 0 01-1.02-.41z"/></svg>
-        <span>TikTok</span>
+      <div class="tiktok-left">
+        <div class="tiktok-logo">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="36"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.99a8.19 8.19 0 004.79 1.54V7.1a4.86 4.86 0 01-1.02-.41z"/></svg>
+          <span>TikTok</span>
+        </div>
+        <h2>Short Tips. Big Impact.</h2>
+        <p>Watch parenting tips, stories, and more — short videos you can watch and apply in minutes.</p>
+        <a href="#" class="btn btn-tiktok">Open TikTok ↗</a>
       </div>
-      <p>Watch parenting tips, stories, and more — short videos you can apply right away.</p>
-      <a href="#" class="btn btn-tiktok">Open TikTok</a>
+      <div class="tiktok-phones">
+        <div class="tt-phone phone-1">
+          <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=200&q=80" alt="" />
+          <div class="tt-phone-overlay">
+            <div class="tt-play">▶</div>
+            <div class="tt-stats"><span>❤️ 2.4k</span></div>
+          </div>
+        </div>
+        <div class="tt-phone phone-2">
+          <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=200&q=80" alt="" />
+          <div class="tt-phone-overlay">
+            <div class="tt-play">▶</div>
+            <div class="tt-stats"><span>❤️ 1.8k</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="footer-top">
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><a href="mailto:andywhitneyparenting@gmail.com">andywhitneyparenting@gmail.com</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Trust</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="logo-circle">
+            <span>PP</span>
+          </div>
+          <div class="logo-text">
+            <strong style="color:#fff">PARENTING POINTS</strong>
+            <small>by Andy Whitney</small>
+          </div>
+        </div>
+        <p>Helping parents raise happy, capable children through practical, expert-backed guidance.</p>
         <div class="social-icons">
           <a href="#" aria-label="Facebook" class="social-icon fb">f</a>
           <a href="#" aria-label="Instagram" class="social-icon ig">&#9679;</a>
@@ -225,9 +502,25 @@
           <a href="#" aria-label="YouTube" class="social-icon yt">▶</a>
         </div>
       </div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="#hero">Home</a>
+          <a href="#about">About Andy</a>
+          <a href="#book">The Book</a>
+          <a href="#blog">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:andywhitneyparenting@gmail.com">andywhitneyparenting@gmail.com</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 Parenting Points. All rights reserved.</p>
+      <p>© 2024 Parenting Points by Andy Whitney. All rights reserved.</p>
+      <p>Made with ❤️ for parents everywhere.</p>
     </div>
   </footer>
 
